@@ -13,6 +13,7 @@ async function main() {
     //   bedrooms: 1,
     //   bathrooms: 1,
     // });
+    await findOneListingByName(client, "Lovely Loft");
   } catch (e) {
     console.error(e);
   } finally {
@@ -23,6 +24,18 @@ async function main() {
 }
 
 main().catch(console.error);
+
+async function findOneListingByName(client, nameOfListing) {
+  const result = await client
+    .db("sample_airbnb")
+    .collection("listingsAndReviews")
+    .findOne({ name: nameOfListing });
+  if (result) {
+    console.log(result);
+  } else {
+    console.log("no listing found");
+  }
+}
 
 async function createListing(client, newListing) {
   const result = await client
