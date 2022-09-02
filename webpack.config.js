@@ -2,7 +2,7 @@ const nodeExternals = require("webpack-node-externals");
 const path = require("path");
 
 const config = {
-  entry: "./app.js",
+  entry: "./database.ts",
   devtool: "inline-source-map",
   // externals: [nodeExternals()],
   output: {
@@ -14,7 +14,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.(js|ts)$/,
         use: "babel-loader",
       },
     ],
