@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "start": "node .\\jalangi2\\src\\js\\commands\\jalangi.js --inlineIID --inlineSource --analysis .\\jalangi2\\sample\\analysis2.js .\\build\\bundle.js"
   },
   "keywords": [],
   "author": "",
